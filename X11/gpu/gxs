@@ -35,6 +35,9 @@ install_property_nvidia_driver() {
     modprobe nvidia-modeset
     modprobe nvidia-drm
     modprobe nvidia-uvm
+    modprobe i2c_nvidia_gpu
+    modprobe drm_kms_helper
+    modprobe drm
 }
 
 remove_property_nvidia_driver() {
@@ -42,6 +45,9 @@ remove_property_nvidia_driver() {
     modprobe -r nvidia-drm
     modprobe -r nvidia-modeset
     modprobe -r nvidia
+    modprobe -r i2c_nvidia_gpu
+    modprobe -r drm_kms_helper
+    modprobe -r drm
 }
 
 answer() {
